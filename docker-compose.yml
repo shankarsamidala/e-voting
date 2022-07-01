@@ -11,9 +11,9 @@ services:
     build: .
     command: python manage.py runserver 0.0.0.0:8000
     volumes:
-      - .:/7
+      - .:/e-voting
     labels:
-      - traefik.http.routers.batch7.rule=Host(`e-voting.platfom.live`)
+      - traefik.http.routers.e-voting.rule=Host(`e-voting.platfom.live`)
       - traefik.http.routers.e-voting.tls=true
       - traefik.http.routers.e-voting.tls.certresolver=lets-encrypt
       - traefik.port=8000  
