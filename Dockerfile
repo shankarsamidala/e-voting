@@ -1,4 +1,4 @@
-FROM python:3.8-alpine
+FROM python:3.8
 
 ENV PYTHONUNBUFFERED 1 
 
@@ -8,11 +8,7 @@ WORKDIR /voting
 
 COPY . /voting/
 
-RUN apk update && apk add python3-dev \
-                        gcc \
-                        libc-dev
-
-RUN apk add python3-cffi
+RUN apt-get update && apt-get -y install gcc
 
 RUN pip install pillow
 
