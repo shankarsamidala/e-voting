@@ -12,6 +12,8 @@ RUN apk update && apk add python3-dev \
                         gcc \
                         libc-dev
 
+RUN apk install python3-cffi
+
 RUN pip install pillow
 
 RUN pip install -r requirements.txt
