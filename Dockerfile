@@ -8,8 +8,11 @@ WORKDIR /voting
 
 COPY . /voting/
 
-RUN pip install pillow
+RUN apk update && apk add python3-dev \
+                        gcc \
+                        libc-dev
 
+RUN pip install pillow
 
 RUN pip install -r requirements.txt
 
